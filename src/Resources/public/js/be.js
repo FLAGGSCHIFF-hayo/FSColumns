@@ -9,6 +9,11 @@ function changeTo(size){
 }
 
 window.addEvent('load', function() {
+    $$('.tl_content_right a.toggle').addEvent('click',function(){
+        var $el = $$(this).getParents('.tl_content')[0].getElements('.cte_type')[0];
+        $el.toggleClass('unpublished');
+        $el.toggleClass('published');
+    });
     $$('.viewport_panel').getPrevious('.tl_submit_panel').addClass('hidden');
     var wrappers = [];
     if(window.location.search.substring(1).indexOf('table=tl_content')!=-1||window.location.search.substring(1).indexOf('table=tl_form_field')!=-1) {
