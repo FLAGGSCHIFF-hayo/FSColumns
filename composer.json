@@ -1,0 +1,47 @@
+{
+	"name":"flaggschiff/fs-columns-bundle",
+	"description":"Contao 4 Columns Bundle",
+	"keywords":["contao","flaggschiff","columns","bootstrap","bundle"],
+	"type":"contao-bundle",
+	"homepage":"https://www.flaggschiff.de//",
+	"license":"LGPL-3.0+",
+	"version": "1.0.0",
+	"authors":[
+		{
+			"name":"Flaggschiff",
+			"homepage":"https://www.flaggschiff.de//",
+			"role":"Developer"
+		}
+	],
+	"require":{
+		"php": ">=5.6.0",
+		"contao/core-bundle": "~4.4"
+	},
+	"require-dev": {
+        "contao/manager-plugin": "^2.0"
+	},
+	"conflict": {
+		"contao/manager-plugin": "<2.0 || >=3.0",
+		"symfony/symfony": "3.2.7"
+	},
+	"autoload": {
+		"psr-4": {
+			"Flaggschiff\\ColumnsBundle\\": "src/"
+		},
+        "classmap": [
+            "src/Resources/contao/"
+		],
+		"exclude-from-classmap": [
+            "src/Resources/contao/config/",
+            "src/Resources/contao/dca/",
+            "src/Resources/contao/languages/",
+            "src/Resources/contao/templates/"
+		]
+  	},
+	"extra": {
+		"branch-alias": {
+			"dev-develop": "1.0.x-dev"
+		},
+		"contao-manager-plugin": "Flaggschiff\\ColumnsBundle\\ContaoManager\\Plugin"
+	}
+}

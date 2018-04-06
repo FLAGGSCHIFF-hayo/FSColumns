@@ -1,0 +1,37 @@
+
+<?php $this->extend('block_searchable'); ?>
+
+<?php $this->block('content'); ?>
+
+<!-- indexer::stop -->
+<?php if($this->playerSize){
+    $size = deserialize($this->playerSize); $padding = $size[1]/$size[0]*100; if($padding<10){$padding=56.25;}
+}
+?>
+
+<?php if ($this->type=='youtube'): ?>
+    <div class="video_container" style="width: 100%; padding-bottom: <?=$padding?>%; padding-left:0; padding-right: 0; position: relative;">
+        <iframe style="position:absolute;top:0;left:0;right:0;bottom:0;min-width:100%;min-height:100%;max-height:100%;max-width:100%;"
+                src="https://www.youtube.com/embed/<?=$this->youtube?>"
+                frameborder="0"
+                allowfullscreen="true"></iframe>
+    </div>
+<?php elseif ($this->isVideo): ?>
+<div class="video_container" style="width: 100%; padding-bottom: <?=$padding?>%; padding-left:0; padding-right: 0; position: relative;">
+    <style>.mejs-container{width:100%!important; height:100%!important;position:absolute!important;}</style>
+    <video style="position:absolute;top:0;left:0;right:0;bottom:0;min-width:100%;min-height:100%;max-height:100%;max-width:100%;" <?php if ($this->poster): ?> poster="<?= $this->poster ?>" preload="none"<?php endif; ?><?php if ($this->autoplay): ?> autoplay<?php endif; ?> controls>
+        <?php foreach ($this->files as $file): ?>
+            <source type="<?= $file->mime ?>" src="<?= $file->path ?>" title="<?= $file->title ?>">
+        <?php endforeach; ?>
+    </video>
+</div>
+<?php else: ?>
+    <audio<?= $this->size ?> preload="none"<?php if ($this->autoplay): ?> autoplay<?php endif; ?> controls>
+        <?php foreach ($this->files as $file): ?>
+            <source type="<?= $file->mime ?>" src="<?= $file->path ?>" title="<?= $file->title ?>">
+        <?php endforeach; ?>
+    </audio>
+<?php endif; ?>
+<!-- indexer::continue -->
+
+<?php $this->endblock(); ?>

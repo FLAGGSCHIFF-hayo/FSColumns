@@ -1,0 +1,6 @@
+
+<section class="<?php echo $this->class; ?><?php if($this->colFullwidthBg){ echo ' full-width'; } ?> ce_column block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+    <?php if($this->colBackground&&$this->colBgColor): ?>
+        <div class="row_bg" style="<?php if($this->colFullwidthBg): ?>width:100vw; left:50%; margin-left:-50vw; <?php else: ?>width:100%; left:0; <?php endif;?>height:100%; position: absolute; top:0; background: #<?=$this->colBgColor?>;"></div>
+    <?php endif;?>
+    <div <?php if(!$this->for_hover): ?>class="row"<?php endif;?>>
