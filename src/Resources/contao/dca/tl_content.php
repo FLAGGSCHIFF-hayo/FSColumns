@@ -58,7 +58,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['fs_columns'] = array(
     'reference' => &$GLOBALS['TL_LANG']['tl_content'],
     'sql' => "varchar(32) NOT NULL default ''"
 );
-if($GLOBALS['TL_CONFIG']['fscol_sizes']!='all') {
+if($GLOBALS['TL_CONFIG']['fscol_sizes']=='all') {
     $GLOBALS['TL_DCA']['tl_content']['fields']['fs_columns']['eval']['submitOnChange'] = false;
 }
 $GLOBALS['TL_DCA']['tl_content']['palettes']['__selector__'][] = 'fs_responsive';
