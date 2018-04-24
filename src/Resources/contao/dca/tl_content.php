@@ -43,13 +43,6 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['colBgColor'] = array
     'sql'                     => "varchar(6) NOT NULL default ''"
 );
 
-if($GLOBALS['TL_CONFIG']['bootstrap']=='regular'||!$GLOBALS['TL_CONFIG']['bootstrap']){
-    $GLOBALS['TL_DCA']['tl_content']['subpalettes']['fs_responsive'] = 'fs_xs_columns,fs_sm_columns,fs_md_columns';
-}
-else{
-    $GLOBALS['TL_DCA']['tl_content']['subpalettes']['fs_responsive'] = 'fs_xxs_columns,fs_xs_columns,fs_sm_columns,fs_md_columns,fs_lg_columns';
-}
-
 $fscoloptions = array('full', 'half', 'third', 'quarter', 'two-third', 'three-quarter', 'hidden');
 
 if($GLOBALS['TL_CONFIG']['fscol_sizes']=='all'){
@@ -152,6 +145,15 @@ if(!is_array($GLOBALS['TL_DCA']['tl_content']['list']['sorting']['panel_callback
 }
 $GLOBALS['TL_DCA']['tl_content']['list']['sorting']['panel_callback']['viewport_panel'] = array('tl_content_fs_columns','addViewPortPanel');
 
+
+if($GLOBALS['TL_CONFIG']['bootstrap']=='regular'||!$GLOBALS['TL_CONFIG']['bootstrap']){
+    $GLOBALS['TL_DCA']['tl_content']['subpalettes']['fs_responsive'] = 'fs_xs_columns,fs_sm_columns,fs_md_columns';
+    $GLOBALS['TL_DCA']['tl_content']['fields']['fs_xs_columns']['label'] = &$GLOBALS['TL_LANG']['tl_content']['fs_xs_columns2'];
+    $GLOBALS['TL_DCA']['tl_content']['fields']['fs_md_columns']['label'] = &$GLOBALS['TL_LANG']['tl_content']['fs_md_columns2'];
+}
+else{
+    $GLOBALS['TL_DCA']['tl_content']['subpalettes']['fs_responsive'] = 'fs_xxs_columns,fs_xs_columns,fs_sm_columns,fs_md_columns,fs_lg_columns';
+}
 
 class tl_content_fs_columns extends \Backend
 {

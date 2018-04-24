@@ -4,10 +4,12 @@
 $GLOBALS['TL_LANG']['tl_content']['fs_columns'] = array('Element width','Choose, how wide the element will be');
 $GLOBALS['TL_LANG']['tl_content']['fs_responsive'] = array('Responsive width','Do you wish to customize the width of the Element on smaller sizes individually?');
 $GLOBALS['TL_LANG']['tl_content']['fs_xxs_columns'] = array('On the smallest devices','Choose, how wide the element will be');
-$GLOBALS['TL_LANG']['tl_content']['fs_xs_columns'] = array('On smaller devices ( Phones )','Choose, how wide the element will be');
-$GLOBALS['TL_LANG']['tl_content']['fs_sm_columns'] = array('On small devices ( Tablets )','Choose, how wide the element will be');
-$GLOBALS['TL_LANG']['tl_content']['fs_md_columns'] = array('On medium devices ( Laptops )','Choose, how wide the element will be');
-$GLOBALS['TL_LANG']['tl_content']['fs_lg_columns'] = array('On big devices ( Desktop computer )','Choose, how wide the element will be');
+$GLOBALS['TL_LANG']['tl_content']['fs_xs_columns'] = array('On smaller devices ( from 480px width )','Choose, how wide the element will be');
+$GLOBALS['TL_LANG']['tl_content']['fs_xs_columns2'] = array('On smaller devices','Choose, how wide the element will be');
+$GLOBALS['TL_LANG']['tl_content']['fs_sm_columns'] = array('On small devices ( from 768px width )','Choose, how wide the element will be');
+$GLOBALS['TL_LANG']['tl_content']['fs_md_columns'] = array('On medium devices ( from 992px width )','Choose, how wide the element will be');
+$GLOBALS['TL_LANG']['tl_content']['fs_md_columns2'] = array('On medium devices ( from 992px up to 1200px width )','Choose, how wide the element will be');
+$GLOBALS['TL_LANG']['tl_content']['fs_lg_columns'] = array('On big devices ( from 1200px up to 1680px width )','Choose, how wide the element will be');
 $GLOBALS['TL_LANG']['tl_content']['hidden'] = 'Hidden';
 $GLOBALS['TL_LANG']['tl_content']['full'] = 'Full';
 $GLOBALS['TL_LANG']['tl_content']['half'] = 'Half';

@@ -4,10 +4,12 @@
 $GLOBALS['TL_LANG']['tl_content']['fs_columns'] = array('Breite des Elements','Bitte geben Sie die Breite des Elements an.');
 $GLOBALS['TL_LANG']['tl_content']['fs_responsive'] = array('Responsive Größe','Möchten Sie die Breite für kleinere Gerätegrößen individuell anpassen?');
 $GLOBALS['TL_LANG']['tl_content']['fs_xxs_columns'] = array('Bei den kleinsten Geräten','Bitte geben Sie die Breite des Elements an.');
-$GLOBALS['TL_LANG']['tl_content']['fs_xs_columns'] = array('Bei sehr kleinen Geräten ( Mobiltelefone )','Bitte geben Sie die Breite des Elements an.');
-$GLOBALS['TL_LANG']['tl_content']['fs_sm_columns'] = array('Bei kleinen Geräten ( Tablets )','Bitte geben Sie die Breite des Elements an.');
-$GLOBALS['TL_LANG']['tl_content']['fs_md_columns'] = array('Bei mittelgroßen Geräten ( Laptops )','Bitte geben Sie die Breite des Elements an.');
-$GLOBALS['TL_LANG']['tl_content']['fs_lg_columns'] = array('Bei großen Geräten ( Desktop-Computer )','Bitte geben Sie die Breite des Elements an.');
+$GLOBALS['TL_LANG']['tl_content']['fs_xs_columns'] = array('Bei sehr kleinen Geräten ( ab 480px Breite )','Bitte geben Sie die Breite des Elements an.');
+$GLOBALS['TL_LANG']['tl_content']['fs_xs_columns2'] = array('Bei sehr kleinen Geräten','Bitte geben Sie die Breite des Elements an.');
+$GLOBALS['TL_LANG']['tl_content']['fs_sm_columns'] = array('Bei kleinen Geräten ( ab 768px Breite )','Bitte geben Sie die Breite des Elements an.');
+$GLOBALS['TL_LANG']['tl_content']['fs_md_columns'] = array('Bei mittelgroßen Geräten ( ab 992px Breite )','Bitte geben Sie die Breite des Elements an.');
+$GLOBALS['TL_LANG']['tl_content']['fs_md_columns2'] = array('Bei mittelgroßen Geräten ( ab 992px bis 1200px Breite )','Bitte geben Sie die Breite des Elements an.');
+$GLOBALS['TL_LANG']['tl_content']['fs_lg_columns'] = array('Bei großen Geräten ( ab 1200px bis 1680px Breite )','Bitte geben Sie die Breite des Elements an.');
 $GLOBALS['TL_LANG']['tl_content']['hidden'] = 'Versteckt';
 $GLOBALS['TL_LANG']['tl_content']['full'] = 'Vollspaltig';
 $GLOBALS['TL_LANG']['tl_content']['half'] = 'Halbspaltig';
