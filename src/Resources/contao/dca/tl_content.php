@@ -147,12 +147,12 @@ $GLOBALS['TL_DCA']['tl_content']['list']['sorting']['panel_callback']['viewport_
 
 
 if($GLOBALS['TL_CONFIG']['bootstrap']=='regular'||!$GLOBALS['TL_CONFIG']['bootstrap']){
-    $GLOBALS['TL_DCA']['tl_content']['subpalettes']['fs_responsive'] = 'fs_xs_columns,fs_sm_columns,fs_md_columns';
+    $GLOBALS['TL_DCA']['tl_content']['subpalettes']['fs_responsive'] = 'fs_md_columns,fs_sm_columns,fs_xs_columns';
     $GLOBALS['TL_DCA']['tl_content']['fields']['fs_xs_columns']['label'] = &$GLOBALS['TL_LANG']['tl_content']['fs_xs_columns2'];
     $GLOBALS['TL_DCA']['tl_content']['fields']['fs_md_columns']['label'] = &$GLOBALS['TL_LANG']['tl_content']['fs_md_columns2'];
 }
 else{
-    $GLOBALS['TL_DCA']['tl_content']['subpalettes']['fs_responsive'] = 'fs_xxs_columns,fs_xs_columns,fs_sm_columns,fs_md_columns,fs_lg_columns';
+    $GLOBALS['TL_DCA']['tl_content']['subpalettes']['fs_responsive'] = 'fs_lg_columns,fs_md_columns,fs_sm_columns,fs_xs_columns,fs_xxs_columns';
 }
 
 class tl_content_fs_columns extends \Backend
