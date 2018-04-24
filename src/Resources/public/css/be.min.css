@@ -43,17 +43,18 @@ body:not(.popup).fs_content .tl_listing_container.cte ul{margin-left:-10px;margi
 body:not(.popup).fs_content .tl_listing_container.cte ul::after{content:'';display:block;clear:both;}
 body:not(.popup).fs_content .tl_listing_container.cte li{position:relative;z-index:0;padding-left:25px;padding-right:25px;padding-bottom:10px;}
 body:not(.popup).fs_content .tl_listing_container.cte li>.row>div{background:none!important;border:0!important;box-shadow:none!important;}
-body:not(.popup).fs_content .tl_listing_container.cte li>.row>div::after{content: '';display: block;position: absolute;top: 0;left: 10px;right: 10px;bottom: 8px;background: rgba(0,0,0,0.05);z-index:-1;}
+body:not(.popup).fs_content .tl_listing_container.cte li>.row>div::after{content: '';display: block;position: absolute;top: 0;left: 10px;right: 10px;bottom: 8px;background: rgba(0,0,0,0.05);z-index:-1;border:1px solid #ddd;}
 body:not(.popup).fs_content .tl_listing_container.cte li>.row>div.wrapper_stop::after{background:none;}
 body:not(.popup).fs_content .tl_listing_container.cte li>.row>div:not(.wrapper_start):not(.wrapper_stop)::after{background:#FFF;}
 body:not(.popup).fs_content .tl_listing_container.cte li>.row>div:hover::after{background:rgb(255, 252, 225)!important;}
-body:not(.popup).fs_content .tl_listing_container.cte .limit_toggler{left:10px;right:10px;width:auto;}
+body:not(.popup).fs_content .tl_listing_container.cte .limit_toggler{left:10px;right:10px;width:auto;border:1px solid #ddd;border-top:none;}
 body:not(.popup).fs_content .cte_type{background:none!important;padding:0!important;float:left;width:auto;}
 body:not(.popup).fs_content .cte_type+*{clear:both;}
 body:not(.popup).fs_content .tl_content_right{margin: 0;max-width:50%;position:relative;}
 body:not(.popup).fs_content .tl_content_right .inner{display:inline-block; width: auto;}
 body:not(.popup).fs_content .tl_content_right a{margin-right: 2px;}
 body:not(.popup).fs_content .tl_listing_container.cte li>.row>li:last-child{width: 100%!important;}
+.tl_header{margin-bottom:8px;}
 /** VIEWPORT BUTTONS **/
 .viewport_panel{text-align: right;width: 100%;}
 .viewport-button{border:1px solid;border-radius:4px;padding:3px 10px;margin:5px;display:inline-block;}
