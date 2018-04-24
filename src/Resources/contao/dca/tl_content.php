@@ -12,7 +12,6 @@ $GLOBALS['TL_WRAPPERS']['stop'][] = 'colStop';
 $GLOBALS['TL_DCA']['tl_content']['subpalettes']['colBackground'] = 'colBgColor,colFullwidthBg';
 $GLOBALS['TL_DCA']['tl_content']['palettes']['__selector__' ][] = 'colBackground';
 
-
 $GLOBALS['TL_DCA']['tl_content']['fields']['colBackground'] = array
 (
     'label'                   => &$GLOBALS['TL_LANG']['tl_content']['colBackground'],
@@ -66,6 +65,9 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['fs_columns'] = array(
     'reference' => &$GLOBALS['TL_LANG']['tl_content'],
     'sql' => "varchar(32) NOT NULL default ''"
 );
+if($GLOBALS['TL_CONFIG']['fscol_sizes']!='all') {
+    $GLOBALS['TL_DCA']['tl_content']['fields']['fs_columns']['eval']['submitOnChange'] = false;
+}
 $GLOBALS['TL_DCA']['tl_content']['palettes']['__selector__'][] = 'fs_responsive';
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['fs_responsive'] = array
@@ -84,9 +86,11 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['fs_xxs_columns'] = array(
     'options' => $fscoloptions,
     'reference' => &$GLOBALS['TL_LANG']['tl_content'],
     'eval' => array('tl_class'=>'w50 clr'),
-    'load_callback' => array(array('tl_content_fs_columns','loadXXSColumns')),
     'sql' => "varchar(32) NOT NULL default ''"
 );
+if($GLOBALS['TL_CONFIG']['fscol_sizes']!='all') {
+    $GLOBALS['TL_DCA']['tl_content']['fields']['fs_xxs_columns']['load_callback'] = array(array('tl_content_fs_columns', 'loadXXSColumns'));
+}
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['fs_xs_columns'] = array(
     'exclude' => false,
@@ -95,9 +99,11 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['fs_xs_columns'] = array(
     'options' => $fscoloptions,
     'reference' => &$GLOBALS['TL_LANG']['tl_content'],
     'eval' => array('tl_class'=>'w50 clr'),
-    'load_callback' => array(array('tl_content_fs_columns','loadXSColumns')),
     'sql' => "varchar(32) NOT NULL default ''"
 );
+if($GLOBALS['TL_CONFIG']['fscol_sizes']!='all') {
+    $GLOBALS['TL_DCA']['tl_content']['fields']['fs_xs_columns']['load_callback'] = array(array('tl_content_fs_columns', 'loadXSColumns'));
+}
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['fs_sm_columns'] = array(
     'exclude' => false,
@@ -106,9 +112,11 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['fs_sm_columns'] = array(
     'options' => $fscoloptions,
     'reference' => &$GLOBALS['TL_LANG']['tl_content'],
     'eval' => array('tl_class'=>'w50 clr'),
-    'load_callback' => array(array('tl_content_fs_columns','loadSMColumns')),
     'sql' => "varchar(32) NOT NULL default ''"
 );
+if($GLOBALS['TL_CONFIG']['fscol_sizes']!='all') {
+    $GLOBALS['TL_DCA']['tl_content']['fields']['fs_sm_columns']['load_callback'] = array(array('tl_content_fs_columns', 'loadSMColumns'));
+}
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['fs_md_columns'] = array(
     'exclude' => false,
@@ -117,9 +125,11 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['fs_md_columns'] = array(
     'options' => $fscoloptions,
     'reference' => &$GLOBALS['TL_LANG']['tl_content'],
     'eval' => array('tl_class'=>'w50 clr'),
-    'load_callback' => array(array('tl_content_fs_columns','loadMDColumns')),
     'sql' => "varchar(32) NOT NULL default ''"
 );
+if($GLOBALS['TL_CONFIG']['fscol_sizes']!='all') {
+    $GLOBALS['TL_DCA']['tl_content']['fields']['fs_md_columns']['load_callback'] = array(array('tl_content_fs_columns', 'loadMDColumns'));
+}
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['fs_lg_columns'] = array(
     'exclude' => false,
@@ -128,9 +138,11 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['fs_lg_columns'] = array(
     'options' => $fscoloptions,
     'reference' => &$GLOBALS['TL_LANG']['tl_content'],
     'eval' => array('tl_class'=>'w50 clr'),
-    'load_callback' => array(array('tl_content_fs_columns','loadLGColumns')),
     'sql' => "varchar(32) NOT NULL default ''"
 );
+if($GLOBALS['TL_CONFIG']['fscol_sizes']!='all') {
+    $GLOBALS['TL_DCA']['tl_content']['fields']['fs_lg_columns']['load_callback'] = array(array('tl_content_fs_columns', 'loadLGColumns'));
+}
 
 
 /** ADD BUTTONS TO CHANGE VIEWPORT-PREVIEW **/
@@ -139,7 +151,6 @@ if(!is_array($GLOBALS['TL_DCA']['tl_content']['list']['sorting']['panel_callback
     $GLOBALS['TL_DCA']['tl_content']['list']['sorting']['panel_callback'] = array();
 }
 $GLOBALS['TL_DCA']['tl_content']['list']['sorting']['panel_callback']['viewport_panel'] = array('tl_content_fs_columns','addViewPortPanel');
-
 
 
 class tl_content_fs_columns extends \Backend
@@ -151,7 +162,7 @@ class tl_content_fs_columns extends \Backend
     }
 
     public function addViewPortPanel($arrRow){
-        $panel = '<div class="viewport_panel"><strong>'.$GLOBALS['TL_LANG']['tl_content']['info_screensizes'].': </strong><a class="viewport-button button-xxs" href="#" title="<480px" onclick="changeTo(\'xxs\');return false;">XXS</a><a class="viewport-button button-xs" href="#" title="<768px" onclick="changeTo(\'xs\');return false;">XS</a><a class="viewport-button button-sm" href="#" title="<992px" onclick="changeTo(\'sm\');return false;">SM</a><a class="viewport-button button-md" href="#" title="<1200px" onclick="changeTo(\'md\');return false;">MD</a><a class="viewport-button button-lg" href="#" title="<1680px" onclick="changeTo(\'lg\');return false;">LG</a><a class="viewport-button button-xlg" href="#" title=">1679px" onclick="changeTo(\'xlg\');return false;">XLG</a><a class="viewport-button" href="#" onclick="changeTo(\'\');return false;">Reset</a></div>';
+        $panel = '<div class="viewport_panel"><strong>'.$GLOBALS['TL_LANG']['tl_content']['info_screensizes'].': </strong><a class="viewport-button button-xxs" href="#" title="<480px" onclick="changeTo(\'xxs\');return false;">XXS</a><a class="viewport-button button-xs" href="#" title="<768px" onclick="changeTo(\'xs\');return false;">XS</a><a class="viewport-button button-sm" href="#" title="<992px" onclick="changeTo(\'sm\');return false;">SM</a><a class="viewport-button button-md" href="#" title="<1200px" onclick="changeTo(\'md\');return false;">MD</a><a class="viewport-button button-lg" href="#" title="<1680px" onclick="changeTo(\'lg\');return false;">LG</a><a class="viewport-button button-xlg" href="#" title=">1679px" onclick="changeTo(\'xlg\');return false;">XLG</a><a class="viewport-button" href="#" onclick="changeTo(\'\');return false;">'.$GLOBALS['TL_LANG']['tl_content']['fs_columns_preview_reset'].'</a></div>';
         return $panel;
     }
 
@@ -353,11 +364,15 @@ class tl_content_fs_columns extends \Backend
 
         foreach($GLOBALS['TL_DCA']['tl_content']['palettes'] as &$GPalette){
             if(!is_array($GPalette)) {
+
                 if (strpos($GPalette, ',nofscolumns')) {
                     $GPalette = str_replace(',nofscolumns', '', $GPalette);
                 } else {
                     $GPalette = str_replace(',type,', ',type,fs_columns,fs_responsive,', $GPalette);
                     $GPalette = str_replace(',type;', ',type,fs_columns,fs_responsive;', $GPalette);
+                    if($GLOBALS['TL_CONFIG']['fscol_sizes']=='all'){
+                        $GPalette = str_replace('fs_responsive',$GLOBALS['TL_DCA']['tl_content']['subpalettes']['fs_responsive'],$GPalette);
+                    }
                 }
             }
         }

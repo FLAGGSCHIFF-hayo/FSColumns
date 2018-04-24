@@ -21,22 +21,6 @@ class FSContainer extends \Frontend {
             }
         }
 
-        /*
-        if(substr($objTemplate->getName(),0,11) == 'mod_article'){
-            if(($GLOBALS['TL_CONFIG']['row']=='article'||($objTemplate->is_container&&$GLOBALS['TL_CONFIG']['container']=='article'&&$GLOBALS['TL_CONFIG']['row']=='direct'))&&$objTemplate->pid==$this->replaceInsertTags('{{page::id}}')&&($objTemplate->inColumn!='header'&&$objTemplate->inColumn!='footer')){
-                $elements = $objTemplate->elements;
-                array_unshift($elements,'<div class="row">');
-                $elements[] = '</div>';
-                $objTemplate->elements = $elements;
-            }
-            if(substr($objTemplate->getName(),0,18) == 'mod_article_teaser'){
-                if($objTemplate->is_container&&$GLOBALS['TL_CONFIG']['container']=='article') {
-                    $objTemplate->class .= ' container';
-                }
-            }
-        }
-        */
-
         if(substr($objTemplate->getName(),0,7) == 'fe_page'){
             /* container and row around left right and main? */
             $sections = $objTemplate->sections;
@@ -52,18 +36,6 @@ class FSContainer extends \Frontend {
             $rowb = '<div class="row">';
             $rowe = '</div>';
             $contentsections = array();
-            /*if($contentsections['before']){
-                $contentsections['before'].='<div class="container"><div class="row">';
-            }
-            else{
-                $contentsections['before']='<div class="container"><div class="row">';
-            }
-            if($contentsections['after']){
-                $contentsections['after']='</div></div>'.$contentsections['after'];
-            }
-            else{
-                $contentsections['after']='</div></div>';
-            }*/
             global $objPage;
             $layout = \LayoutModel::findById($objPage->layout);
             $cleftwidth = $layout->fswidthLeft;
@@ -96,17 +68,6 @@ class FSContainer extends \Frontend {
             $objTemplate->footer = $contentfooter;
             $objTemplate->main = $contentmain;
         }
-
-    }
-
-    public function getArticleHook($objRow){
-
-        /*$arClass = deserialize($objRow->cssID, true);
-        if($objRow->is_container&&$GLOBALS['TL_CONFIG']['container']=='article'){
-            $arClass[1] = trim($arClass[1] . ' container');
-        }
-        $objRow->cssID = serialize($arClass);*/
-
 
     }
 

@@ -26,7 +26,6 @@ $GLOBALS['TL_CTE']['column']['colStart'] = 'Flaggschiff\ContentColumnStart';
 $GLOBALS['TL_CTE']['column']['colStop'] = 'Flaggschiff\ContentColumnStop';
 
 $GLOBALS['TL_HOOKS']['getContentElement'][] = array('Flaggschiff\FSColumns', 'getContentElementHook');
-$GLOBALS['TL_HOOKS']['getArticle'][] = array('Flaggschiff\FSContainer','getArticleHook');
 $GLOBALS['TL_HOOKS']['parseTemplate'][] = array('Flaggschiff\FSContainer','parseTemplateHook');
 $GLOBALS['TL_HOOKS']['parseTemplate'][] = array('Flaggschiff\FSColumns','parseTemplateHook');
 $GLOBALS['TL_HOOKS']['parseWidget'][] = array('Flaggschiff\FSForms', 'parseWidgetHook');

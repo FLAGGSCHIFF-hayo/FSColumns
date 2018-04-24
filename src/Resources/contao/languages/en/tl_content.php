@@ -24,4 +24,6 @@ $GLOBALS['TL_LANG']['CTE']['colStart'] = array("Wrapper start","");
 $GLOBALS['TL_LANG']['CTE']['colStop'] = array("Wrapper stop","");
 $GLOBALS['TL_LANG']['CTE']['fsdivider'] = array("Divider","");
 
+$GLOBALS['TL_LANG']['tl_content']['fs_columns_preview_reset'] = "Reset";
+
 ?>

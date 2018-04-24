@@ -24,4 +24,6 @@ $GLOBALS['TL_LANG']['CTE']['colStart'] = array("Umschlag Anfang","");
 $GLOBALS['TL_LANG']['CTE']['colStop'] = array("Umschlag Ende","");
 $GLOBALS['TL_LANG']['CTE']['fsdivider'] = array("Trenner","");
 
+$GLOBALS['TL_LANG']['tl_content']['fs_columns_preview_reset'] = "Zurücksetzen";
+
 ?>
