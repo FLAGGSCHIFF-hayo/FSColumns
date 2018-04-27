@@ -44,7 +44,17 @@ class FSForms extends \Frontend {
             }
         }
         if (TL_MODE == 'FE') {
-            return '<div class="' . $addClass . '">' . $strBuffer . '</div>';
+            if($widget->type!='fieldset') {
+                return '<div class="' . $addClass . '">' . $strBuffer . '</div>';
+            }
+            else{
+                if($widget->fsType=='fsStart'){
+                    return '<div class="' . $addClass . '">' .$strBuffer;
+                }
+                else{
+                    return $strBuffer . '</div>';
+                }
+            }
         }
         else{
             $strBuffer .= '<div class="sizes" data-size="'.$addClass.'"></div>';
