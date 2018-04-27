@@ -1,9 +1,8 @@
 
-<?php $this->extend('block_searchable'); ?>
+<?php $this->extend('block_unsearchable'); ?>
 
 <?php $this->block('content'); ?>
 
-<!-- indexer::stop -->
 <?php if($this->playerSize){
     $size = deserialize($this->playerSize); $padding = $size[1]/$size[0]*100; if($padding<10){$padding=56.25;}
 }
@@ -32,6 +31,5 @@
         <?php endforeach; ?>
     </audio>
 <?php endif; ?>
-<!-- indexer::continue -->
 
 <?php $this->endblock(); ?>
