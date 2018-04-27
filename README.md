@@ -1,4 +1,4 @@
-#Flaggschiff FSColumns Bundle
+# Flaggschiff FSColumns Bundle
 
 FSColumns bindet kinderleicht Bootstrap in Contao ein. Mit wenig Aufwand hat man schnell ein Gridsystem zur Verfügung, in das man jedes Contentelement einbinden kann. Die Erweiterung bringt standardmäßig zwei Gridsysteme mit sich, zwischen denen man wählen kann:
 
@@ -9,7 +9,7 @@ Beide Versionen fügen ein CSS ein, das lediglich das Bootstrap Layout einbindet
 
 Die Erweiterung soll damit die Arbeit zu Beginn beim Aufsetzen eines neuen Layouts erleichtern.
 
-##Installation
+## Installation
 
 Die Installation erfolgt über composer oder den Contao Manager.
 
@@ -26,9 +26,9 @@ Diese Auswahl ermöglicht es, statt den presets wie "halbspaltig", "drittelspalt
 
 Die Erweiterung bindet die Bootstrap CSS automatisch ein, das heißt, dass die Installation und Konfiguration hiermit abgeschlossen ist.
 
-##Verwendung
+## Verwendung
 
-###Inhaltselemente
+### Inhaltselemente
 
 Dieser Abschnitt geht davon aus, dass "Presets" für "Bootstrap Größen" gewählt ist. Die Unterschiede werden am Ende des Abschnitts erklärt.
 
@@ -60,17 +60,17 @@ Im Falle des regulären Bootstraps:
 
 Jedes dieser Felder bietet die Optionen "Vollspaltig" usw. Alle Inhaltselemente können somit für unterschiedliche Bildschirmgrößen angepasst werden.
 
-####Unterschiede bei "Bootstrap Größen": "Alle"
+#### Unterschiede bei "Bootstrap Größen": "Alle"
 
 Im Fall, dass bei "Bootstrap Größen" der Punkt "Alle" gewählt ist, sieht das Backend ein klein wenig anders aus. Der Punkt "Responsive Größe" entfällt und alle responsiven Breiten müssen selbst gewählt werden. Zudem wird zwischen Werten von 1 bis 12 gewählt, statt "halbspaltig", "drittelspaltig" usw.
 
-###Backend Preview
+### Backend Preview
 
 Man kann in der Übersicht der Inhaltselemente eine Vorschau der Elementbreiten sehen. Die Breite der Elemente, je nach Bildschirmgröße, kann durch die Vorschau Buttons getestet werden.
 
 Diese befinden sich unter den Filtermöglichkeiten.
 
-###"Spalten"
+### "Spalten"
 
 Es kann allerdings den Fall geben, dass 4 Elemente Drittelspaltig sein sollen, das vierte Element aber auf kleineren Größen unter dem ersten Element erscheinen soll. 
 
@@ -109,15 +109,15 @@ Dies ist ein Beispiel zum Einsetzen einer Spalte. Für das Layout gelten alle El
 
 Einsetzbar ist die Spalte wie ein Umschlag für Akkordeons.
 
-###Formulare
+### Formulare
 
 FSColumns passt auch Formularfelder an. Sie besitzen die selben responsive Funktionalitäten wie Inhaltselemente. Das Fieldset ist in diesem Fall die Spalte.
 
-###Andere Erweiterungen
+### Andere Erweiterungen
 
 FSColumns erweitert alle Contentelemente mit den notwendigen Feldern, ausgeschlossen sind lediglich Elemente, deren Palette das Feld "nofscolumns" beinhalten.
 
-###Verwendbare CSS Klassen
+### Verwendbare CSS Klassen
 
 Das CSS in FSColumns ermöglicht die Verwendung der folgenden CSS Klassen:
 
@@ -146,7 +146,7 @@ Das CSS in FSColumns ermöglicht die Verwendung der folgenden CSS Klassen:
 - pull-left, 
 - pull-right
 
-##Templates
+## Templates
 
 FSColumns bearbeitet folgende Templates:
 
@@ -160,7 +160,7 @@ FSColumns bearbeitet folgende Templates:
 
 Werden die "form" Templates von anderen Modulen überschrieben, verlieren die Formularfelder die Bootstrap-funktionalität.
 
-##Klassen und Hooks
+## Klassen und Hooks
 
 FSColumns bedient sich folgender Hooks:
 
@@ -183,7 +183,7 @@ Folgende Klassen sind in FSColumns enthalten:
 - FSForms
     - public functionparseWidgetHook( string $strBuffer, obj $widget ) -> Hook ( siehe oben )
     
-##DCA
+## DCA
 
 Die DCA folgender Tabellen wird angepasst:
 
